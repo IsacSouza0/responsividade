@@ -1,0 +1,101 @@
+body{
+    background-color:lightseagreen;
+    margin: 0;
+}
+.grid{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, minmax(30px, auto));
+    grid-template-areas: 
+    " header header header header header"
+    "sidebar sidebar sidebar sidebar sidebar"
+    "main main main main main";
+}
+
+header{
+    align-items: center;
+    display: flex;
+    grid-area: header;
+    justify-content: space-between;
+    padding: 0 10px;
+
+}
+header nav a:nth-child(1) {
+font-size: 18pt;
+}
+header nav a{
+    color: black;
+    font-size: 18pt;
+    justify-content: center;
+    padding: 100px;
+}
+.menu-hamburguer{
+    align-items: center;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 30px;
+}
+.traco{
+    background-color: black;
+    border-radius: 10px;
+    height: 3px;
+    margin: 3px 0;
+    width: 100%;}
+.sidebar{
+    box-shadow: 2px 2px 15px 1px black;
+    background-color: white;
+    grid-area: sidebar;
+    padding: 30px 0;
+
+}
+.sidebar nav {
+    align-items: center;
+    display: flex;
+    justify-content: space-evenly;
+}
+.sidebar nav a{
+    color: black;
+    font-size: 14pt;
+    text-decoration: none;
+}
+main{
+    font-size: 14pt;
+    grid-area: main;
+    margin: 5px;
+}
+/* breakpoint para tablet*/
+@media(min-width: 768px){
+    header nav {
+        display: block;
+    
+    }
+.menu-hamburguer{
+    display: none;
+}}
+/* Breakpoint para Notebooks pequenos  */
+@media(min-width: 992px){
+    .grid{
+        grid-template-areas: 
+        "header header header header header"
+        " sidebar sidebar sidebar sidebar sidebar "
+        "main main main main main";
+    }
+    .sidebar{
+        border-radius: 25px;
+        box-shadow: 1px 1px 15px 2px black;
+        margin: 5px;
+    }
+.sidebar nav{
+    flex-direction: row;
+    justify-content:space-evenly;
+    }
+}
+/* Breakpoint para Notebooks grandes e Desktpo */
+@media( min-width:1200px){
+main{
+    margin: auto;
+    max-width: 1200px;
+}
+}
